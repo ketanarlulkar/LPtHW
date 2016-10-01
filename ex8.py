@@ -1,3 +1,4 @@
+# The %r will give you the "raw programmer's" version of variable, also known as the "representation."
 formatter = "%r %r %r %r"
 
 print formatter % (1, 2, 3, 4)
