@@ -9,6 +9,9 @@ print "If you do want that, hit RETURN."
 raw_input("?")
 
 print "Opening the file..."
+# Read mode is default for the open() function
+# 'w' open file for writing
+# 'r' open file for reading
 target = open(filename, 'w')
 
 print "Truncating the file.  Goodbye!"
