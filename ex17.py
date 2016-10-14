@@ -1,24 +1,27 @@
+# Python code in one module gains access to the code
+# in another module by the process of importing it.
+# Modules in Python are simply Python files with the .py extension, which implement a set of functions.
+# Modules are imported from other modules using the import command.
 from sys import argv
 from os.path import exists
 
 script, from_file, to_file = argv
 
-print "Copying from %s to %s" % (from_file, to_file)
-
 # we could do these two on one line, how?
-in_file = open(from_file)
-indata = in_file.read()
+with open(from_file) as f:
+    indata = f.read()
+# in_file = open(from_file)
+# indata = in_file.read()
 
-print "The input file is %d bytes long" % len(indata)
-
-print "Does the output file exist? %r" % exists(to_file)
-print "Ready, hit RETURN to continue, CTRL-C to abort."
-raw_input()
-
-out_file = open(to_file, 'w')
-out_file.write(indata)
+with open(to_file, 'w') as f:
+    f.write(indata)
+# out_file = open(to_file, 'w')
+# out_file.write(indata)
 
 print "Alright, all done."
 
-out_file.close()
-in_file.close()
+# Close is always necessary when dealing with files,
+# it is not a good idea to leave open file handles all over the place.
+# They will eventually be closed when the file object is garbage collected
+# but you do not know when that will be and in the mean time
+# you will be wasting system resources by holding to file handles you no longer need.
