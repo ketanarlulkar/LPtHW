@@ -28,6 +28,8 @@ print "Age: %d, Height: %d, Weight: %d, IQ: %d" % (age, height, weight, iq)
 # A puzzle for the extra credit, type it in anyway.
 print "Here is a puzzle."
 
+what = ((30 + 5) + ((78 - 4) - ((90 * 2) * ((100 / 2) / 2))))
+print "what is ", what
 what = add(age, subtract(height, multiply(weight, divide(iq, 2))))
 
 print "That becomes: ", what, "Can you do it by hand?"
