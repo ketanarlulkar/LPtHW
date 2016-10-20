@@ -22,6 +22,7 @@ def secret_formula(started):
     jelly_beans = started * 500
     jars = jelly_beans / 1000
     crates = jars / 100
+    # A fucntion can return multiple variables
     return jelly_beans, jars, crates
 
 
