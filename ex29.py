@@ -16,6 +16,7 @@ if people > dogs:
     print "The world is dry!"
 
 
+# dogs = dogs + 5
 dogs += 5
 
 if people >= dogs:
